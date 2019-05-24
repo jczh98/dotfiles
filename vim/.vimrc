@@ -13,6 +13,8 @@ call plug#end()
 filetype off
 filetype plugin indent on
 syntax on
+" Shift width
+set shiftwidth=4
 " No compatible for vi
 set nocompatible
 " Hightlight search results.

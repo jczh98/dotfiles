@@ -8,6 +8,7 @@ Plug 'Valloric/YouCompleteMe', {
   \'do': './install.py --clang-completer',
   \'for': ['c', 'cpp', 'python'],
   \}
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 filetype off

@@ -4,9 +4,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Reewr/vim-monokai-phoenix'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'solarnz/thrift.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'Valloric/YouCompleteMe', {
-  \'do': './install.py --clang-completer',
-  \'for': ['c', 'cpp', 'python'],
+  \'do': './install.py --clang-completer --rust-completer',
+  \'for': ['c', 'cpp', 'python', 'rust'],
   \}
 Plug 'scrooloose/nerdtree'
 call plug#end()
@@ -36,8 +37,9 @@ set autoindent
 colorscheme monokai-phoenix
 " YouCompleteMe
 let g:ycm_semantic_triggers = {
-  \'c,cpp,python': ['re!\w{2}'],
+  \'c,cpp,python,rust': ['re!\w{2}'],
   \}
+let g:ycm_rust_src_path = substitute(system('rustc --print sysroot'), '\n\+$', '', '') . '/lib/rustlib/src/rust/src'
 " Airline
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')

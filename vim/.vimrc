@@ -62,4 +62,9 @@ hi Normal ctermfg=NONE ctermbg=NONE
 hi Pmenu ctermfg=NONE ctermbg=236 cterm=NONE
 hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE
 
-
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
+"" Not to show line number
+let g:NERDTreeShowLineNumbers=0
+"" Close when it's only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

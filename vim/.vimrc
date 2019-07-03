@@ -66,5 +66,10 @@ hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE
 map <F2> :NERDTreeToggle<CR>
 "" Not to show line number
 let g:NERDTreeShowLineNumbers=0
-"" Close when it's only window
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Set auto complete brackets
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap { {<CR>}<ESC>O
+inoremap < <><ESC>i

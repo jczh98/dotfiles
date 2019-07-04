@@ -73,3 +73,9 @@ inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
 inoremap { {<CR>}<ESC>O
 inoremap < <><ESC>i
+
+" modification in insert mode
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>

@@ -10,6 +10,7 @@ Plug 'Valloric/YouCompleteMe', {
   \'for': ['c', 'cpp', 'python', 'rust'],
   \}
 Plug 'scrooloose/nerdtree'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 filetype off
@@ -66,13 +67,6 @@ hi PmenuSel ctermfg=NONE ctermbg=24 cterm=NONE
 map <F2> :NERDTreeToggle<CR>
 "" Not to show line number
 let g:NERDTreeShowLineNumbers=0
-
-" Set auto complete brackets
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap { {<CR>}<ESC>O
-inoremap < <><ESC>i
 
 " modification in insert mode
 inoremap <C-h> <Left>

@@ -1,0 +1,6 @@
+/zsh/.zsh/sourceables.sh
+/zsh/.zshrc_backup
+/tmux/.tmux/plugins
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store

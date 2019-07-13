@@ -1,29 +1,23 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH
-export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
-
-export PATH="$HOME/.cargo/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CONFIG=$HOME/.zsh
+export ZSH_CUSTOM=$HOME/.zsh-custom
+export ZSH_PLUGIN=$ZSH_CUSTOM/plugins
+export EDITOR=nvim
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="ys"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# Add zsh completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+# ZSH_THEME="agnoster"
+ZSH_THEME="cloud"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -53,60 +47,22 @@ ZSH_THEME="ys"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-ZSH_CUSTOM=$HOME/.zsh
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
+# Custom plugins:
+# - zshmarks https://github.com/jocelynmallon/zshmarks
+# - zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.
+#   Must be the last plugin sourced.
+plugins=(theme last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-export PATH=${PATH}:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
-export PATH=$PATH:~/Library/flutter/bin
-
-# added by travis gem
-[ -f /Users/chin/.travis/travis.sh ] && source /Users/chin/.travis/travis.sh
-export TAICHI_NUM_THREADS=8
-export TAICHI_REPO_DIR=/Users/chin/workshop/taichi
-export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH
-export PATH=$TAICHI_REPO_DIR/bin/:$PATH
-export TAICHI_NUM_THREADS=8
-export TAICHI_REPO_DIR=/Users/chin/workshop/taichi
-export PYTHONPATH=$TAICHI_REPO_DIR/python/:$PYTHONPATH
-export PATH=$TAICHI_REPO_DIR/bin/:$PATH
+# Load additional setup
+source $ZSH_CONFIG/aliases.zsh
+source $ZSH_CONFIG/colors.zsh
+source $ZSH_CONFIG/functions.zsh
+source $ZSH_CONFIG/history.zsh
+source $ZSH_CONFIG/paths.zsh
+source $ZSH_CONFIG/plugins.zsh

@@ -1,3 +1,5 @@
+# Own enviroments
+export PATH=$HOME/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CONFIG=$HOME/.zsh

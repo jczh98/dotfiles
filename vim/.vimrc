@@ -41,6 +41,7 @@ let g:ycm_semantic_triggers = {
   \'c,cpp,python,rust': ['re!\w{2}'],
   \}
 let g:ycm_rust_src_path = substitute(system('rustc --print sysroot'), '\n\+$', '', '') . '/lib/rustlib/src/rust/src'
+let g:ycm_autoclose_preview_window_after_completion = 1
 " Airline
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
